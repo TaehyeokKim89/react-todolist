@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
     const [list, setList] = useState([
-        { id: 1, title: '리액트 공부하기', desc: '리액트 기초를 공부해봅시다', isDone: false },
+        { id: 0, title: '', desc: '', isDone: false },
     ]);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
@@ -51,14 +51,14 @@ function App() {
 
             <div className="inputBox">
                 <div>
-                    <b>제목</b>{' '}
+                    <label className='inpuName'> 제목 </label>
                     <input
                         type="text"
                         className="inputBoxIn"
                         value={title}
                         onChange={onTitleHandler}
                     ></input>
-                    <b>내용</b>{' '}
+                    <label className='inpuName'> 내용 </label>
                     <input
                         type="text"
                         className="inputBoxIn"
@@ -72,15 +72,15 @@ function App() {
                 </button>
             </div>
 
-            <div>Working..</div>
+            <div className='wd'>Working..</div>
             <div className="backTodoList">
                 {list.map((item) => {
                     if (!item.isDone) {
                         return (
                             <div className="toDoList">
                                 <div>
-                                    <div>{item.title}</div>
-                                    <div>{item.desc}</div>
+                                    <textarea rows="3" className='title' type="text" value={item.title}> </textarea>
+                                    <div className='desc'>{item.desc}</div>
                                     <div>
                                         <button
                                             onClick={() => deleteButtonHandler(item.id)}
@@ -92,7 +92,7 @@ function App() {
                                             className="doneButton"
                                             onClick={() => doneButtonHandler(item.id)}
                                         >
-                                            완료
+                                            {list.isDone ? '취소' : '완료'}
                                         </button>
                                     </div>
                                 </div>
@@ -101,16 +101,16 @@ function App() {
                     }
                 })}
             </div>
-            <div>Done..</div>
+            <div className='wd'>Done..</div>
             <div className="backDoneList">
-                {list.filter((item) => {
-                    console.log(item)
+                {list.map((item) => {
+                    console.log(item);
                     if (item.isDone) {
                         return (
                             <div key={item.id} className="toDoList">
                                 <div>
-                                    <div>{item.title}</div>
-                                    <div>{item.desc}</div>
+                                    <div className='title'>{item.title}</div>
+                                    <div className='desc'>{item.desc}</div>
                                     <div>
                                         <button
                                             onClick={() => deleteButtonHandler(item.id)}
@@ -122,7 +122,7 @@ function App() {
                                             className="doneButton"
                                             onClick={() => doneButtonHandler(item.id)}
                                         >
-                                            완료
+                                            {list.isDone ? '완료' : '취소'}
                                         </button>
                                     </div>
                                 </div>
