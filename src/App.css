@@ -1,15 +1,14 @@
-/* .main {
-    max-width: 1200px;
-    min-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    margin: auto;
-} */
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 .header {
+    font-family: 'twayair';
     max-width: 1200px;
     min-width: 800px;
     justify-content: space-between;
@@ -20,6 +19,7 @@
 }
 
 .inputBox {
+    font-family: 'twayair';
     max-width: 1200px;
     min-width: 800px;
     height: 50px;
@@ -66,3 +66,40 @@
     padding: 20px;
     flex-direction: row;
 }
+
+.inputBoxIn {
+    height: 25px;
+    width:200px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin-right: 10px;
+}
+
+.deleteButton{
+    height: 35px;
+    width: 90px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 10px;
+
+
+}
+
+.doneButton{
+    height: 35px;
+    width: 90px;
+    border: 2px solid rgb(40, 139, 10);
+    border-radius: 10px;
+    background-color: white;
+    }
+.addButton {
+    height: 35px;
+    width: 90px;
+    border: 2px solid rgb(67, 168, 133);
+    border-radius: 10px;
+    background-color: rgb(67, 168, 133);
+    color: white;
+    }
+    
+
