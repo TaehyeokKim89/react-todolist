@@ -43,6 +43,7 @@
     border-radius: 10px;
     flex-direction: column;
     margin-right: 20px;
+   
 }
 
 .backTodoList {
@@ -55,6 +56,8 @@
     margin: auto;
     padding: 20px;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .backDoneList {
@@ -68,6 +71,8 @@
     margin: auto;
     padding: 20px;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .inputBoxIn {

@@ -2,9 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-    const [list, setList] = useState([
-        { id: 0, title: '', desc: '', isDone: false },
-    ]);
+    const [list, setList] = useState([{ id: 0, title: '', desc: '', isDone: false }]);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
 
@@ -14,7 +12,7 @@ function App() {
     const onDescHandler = (event) => {
         setDesc(event.target.value);
     };
-    const clickAddButtonHandler = () => {
+    const clickAddButtonHandler = (event) => {
         const addList = {
             id: list.length + 1,
             title,
@@ -22,6 +20,8 @@ function App() {
             isDone: false,
         };
         setList([...list, addList]);
+        setTitle('');
+        setDesc('');
     };
     const deleteButtonHandler = (id) => {
         const newList = list.filter((list) => list.id !== id);
@@ -51,14 +51,14 @@ function App() {
 
             <div className="inputBox">
                 <div>
-                    <label className='inpuName'> 제목 </label>
+                    <label className="inputName"> 제목 </label>
                     <input
                         type="text"
                         className="inputBoxIn"
                         value={title}
                         onChange={onTitleHandler}
                     ></input>
-                    <label className='inpuName'> 내용 </label>
+                    <label className="inputName"> 내용 </label>
                     <input
                         type="text"
                         className="inputBoxIn"
@@ -72,15 +72,22 @@ function App() {
                 </button>
             </div>
 
-            <div className='wd'>Working..</div>
+            <div className="wd">Working..</div>
             <div className="backTodoList">
                 {list.map((item) => {
                     if (!item.isDone) {
                         return (
                             <div className="toDoList">
                                 <div>
-                                    <textarea rows="3" className='title' type="text" value={item.title}> </textarea>
-                                    <div className='desc'>{item.desc}</div>
+                                    <textarea
+                                        rows="3"
+                                        className="title"
+                                        type="text"
+                                        value={item.title}
+                                    >
+                                        {' '}
+                                    </textarea>
+                                    <div className="desc">{item.desc}</div>
                                     <div>
                                         <button
                                             onClick={() => deleteButtonHandler(item.id)}
@@ -101,7 +108,7 @@ function App() {
                     }
                 })}
             </div>
-            <div className='wd'>Done..</div>
+            <div className="wd">Done..</div>
             <div className="backDoneList">
                 {list.map((item) => {
                     console.log(item);
@@ -109,8 +116,8 @@ function App() {
                         return (
                             <div key={item.id} className="toDoList">
                                 <div>
-                                    <div className='title'>{item.title}</div>
-                                    <div className='desc'>{item.desc}</div>
+                                    <div className="title">{item.title}</div>
+                                    <div className="desc">{item.desc}</div>
                                     <div>
                                         <button
                                             onClick={() => deleteButtonHandler(item.id)}
