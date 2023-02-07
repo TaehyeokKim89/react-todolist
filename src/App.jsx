@@ -17,12 +17,14 @@ function App() {
     const onDescHandler = (event) => {
         setDesc(event.target.value);
     };
+
     const clickAddButtonHandler = (event) => {
         const getTitle = document.getElementById('title');
         const getDesc = document.getElementById('desc');
         if (getTitle.value.length == 0) {
             return false;
         } else if (getDesc.value.length == 0) {
+            return false;
         } else {
             const addList = {
                 id: list.length + 1,
@@ -31,30 +33,10 @@ function App() {
                 isDone: false,
             };
             setList([...list, addList]);
-
             setTitle('');
             setDesc('');
         }
     };
-    const deleteButtonHandler = (id) => {
-        const newList = list.filter((list) => list.id !== id);
-        setList(newList);
-    };
-
-    const doneButtonHandler = (id) => {
-        const doneLits = list.map((x) => {
-            if (x.id === id) {
-                return {
-                    ...x,
-                    isDone: !x.isDone,
-                };
-            } else {
-                return { ...x };
-            }
-        });
-        setList(doneLits);
-    };
-
     return (
         <div className="main">
             <Header />
@@ -67,12 +49,8 @@ function App() {
             />
             <List
             list={list}
-            deleteButtonHandler={deleteButtonHandler}
-            doneButtonHandler={doneButtonHandler}
-            />
-           
-
-            
+            setList={setList}
+            /> 
         </div>
     );
 }
