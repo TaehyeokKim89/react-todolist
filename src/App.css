@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    background-color: rgb(46, 58, 131);
+    font-family: 'twayair';
+    max-width: 1200px;
+    min-width: 800px;
+    height: 30px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputBox {
+    font-family: 'twayair';
+    max-width: 1200px;
+    min-width: 800px;
+    height: 55px;
+    border: 1px solid transparent;
+    background-color: rgb(105, 161, 161);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.inputBoxIn {
+    height: 25px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    font-family: 'twayair';
 }
 
-.App-link {
-  color: #61dafb;
+.backTodoList {
+    background-color: rgb(105, 161, 161);
+    max-width: 1200px;
+    min-width: 800px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: left;
+    margin: auto;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toDoList {
+    background-color: rgb(105, 161, 161);
+    width: 250px;
+    min-height: 180px;
+    border: 5px solid rgb(46, 58, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-direction: column;
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.deleteButton {
+    height: 35px;
+    width: 90px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: transparent;
+    margin: 5px 5px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.doneButton {
+    height: 35px;
+    width: 90px;
+    border: 2px solid rgb(46, 58, 131);
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    margin: 5px 5px 15px;
+    cursor: pointer;
+}
+
+.addButton {
+    height: 35px;
+    width: 90px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(46, 58, 131);
+    color: white;
+    cursor: pointer;
+}
+
+.wd {
+    background-color: rgb(46, 58, 131);
+    padding: 15px;
+    height: 20px;
+    max-width: 1200px;
+    min-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: auto;
+    font-family: 'twayair';
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.title {
+    max-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: auto;
+    font-family: 'twayair';
+    font-size: 20px;
+    margin-bottom: 1px;
+    color: white;
+    padding: 5px;
+}
+
+.desc {
+    max-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: auto;
+    font-family: 'twayair';
+    margin-bottom: 10px;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+
+.button :hover {
+    background-color: black;
+    border: 2px solid black;
 }
