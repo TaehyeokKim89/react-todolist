@@ -7,6 +7,7 @@
 }
 
 .header {
+    background-color: rgb(46, 58, 131);
     font-family: 'twayair';
     max-width: 1200px;
     min-width: 800px;
@@ -15,6 +16,11 @@
     display: flex;
     align-items: center;
     margin: auto;
+    padding: 20px;
+    /* border: 5px solid  rgb(105, 161, 161); */
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .inputBox {
@@ -24,33 +30,52 @@
     height: 55px;
     border: 1px solid transparent;
     background-color: rgb(105, 161, 161);
+    /* border: 5px solid rgb(46, 58, 131); */
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    margin: 10px auto;
+    margin: auto;
 }
 
 .toDoList {
-    background-color: rgb(46, 58, 131);
-    width: 270px;
-    height: 180px;
-    /* border: 3px solid rgb(5, 95, 95); */
+    background-color: rgb(105, 161, 161);
+    width: 250px;
+    min-height: 180px;
+    border: 5px solid rgb(46, 58, 131);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     flex-direction: column;
     margin-right: 20px;
-   
+    padding: 5px;
 }
 
+.doneList {
+    background-color:  rgb(105, 161, 161);
+    width: 250px;
+    min-height: 180px;
+    border: 5px solid rgb(46, 58, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-direction: column;
+    margin-right: 20px;
+    padding: 5px;
+
+}
+   
+
+
 .backTodoList {
-    /* background-color: green; */
+    background-color: rgb(105, 161, 161);
     max-width: 1200px;
     min-width: 800px;
     display: flex;
+    border-radius: 5px;
     align-items: center;
     justify-content: left;
     margin: auto;
@@ -61,13 +86,13 @@
 }
 
 .backDoneList {
-    /* background-color: green; */
+    background-color: rgb(105, 161, 161);
+    border-radius: 5px;
     max-width: 1200px;
     min-width: 800px;
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 200px;
     margin: auto;
     padding: 20px;
     flex-direction: row;
@@ -96,11 +121,21 @@
 .doneButton {
     height: 35px;
     width: 90px;
-    border: 2px solid rgb(105, 161, 161);
+    border: 2px solid rgb(46, 58, 131);
     border-radius: 10px;
     background-color: transparent;
     color: white;
 }
+
+.cancelButton{
+    height: 35px;
+    width: 90px;
+    border: 2px solid rgb(46, 58, 131);
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+}
+
 .addButton {
     height: 35px;
     width: 90px;
@@ -111,6 +146,7 @@
 }
 
 .wd {
+    background-color: rgb(46, 58, 131) ;
     padding: 15px;
     height: 20px;
     max-width: 1200px;
@@ -121,32 +157,41 @@
     margin: auto;
     font-family: 'twayair';
     font-size: 30px;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .title {
-    background-color: green;
+    /* background-color: white; */
+    max-width: 200px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: left;
     margin: auto;
     font-family: 'twayair';
     font-size: 20px;
-    height: 40px;
     margin-bottom: 10px;
+    color: white;
+    padding: 5px;
 }
 
 .desc {
-    background-color: green;
+    /* background-color: white; */
+    max-width: 200px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: left;
     margin: auto;
     font-family: 'twayair';
     margin-bottom: 10px;
-    font-size: 20px;
-    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
 }
 
-.inpuName {
+.inputName {
     font-family: 'twayair';
 }

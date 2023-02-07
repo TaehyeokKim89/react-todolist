@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import './App.css';
+import Header from './component/Header';
 
 function App() {
-    const [list, setList] = useState([{ id: 0, title: '', desc: '', isDone: false }]);
+    const [list, setList] = useState([
+        { id: 0, title: '오늘 할 일!', desc: '어떤 것을 해볼까?', isDone: false },
+    ]);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
 
@@ -13,15 +16,17 @@ function App() {
         setDesc(event.target.value);
     };
     const clickAddButtonHandler = (event) => {
-        const addList = {
-            id: list.length + 1,
-            title,
-            desc,
-            isDone: false,
-        };
-        setList([...list, addList]);
-        setTitle('');
-        setDesc('');
+            const addList = {
+                id: list.length + 1,
+                title,
+                desc,
+                isDone: false,
+            };
+            setList([...list, addList]);
+    
+            setTitle('');
+            setDesc('');             
+        
     };
     const deleteButtonHandler = (id) => {
         const newList = list.filter((list) => list.id !== id);
@@ -44,49 +49,41 @@ function App() {
 
     return (
         <div className="main">
-            <div className="header">
-                <div>My Todo List</div>
-                <div>React</div>
-            </div>
+            <Header />
 
             <div className="inputBox">
-                <div>
-                    <label className="inputName"> 제목 </label>
-                    <input
-                        type="text"
-                        className="inputBoxIn"
-                        value={title}
-                        onChange={onTitleHandler}
-                    ></input>
-                    <label className="inputName"> 내용 </label>
-                    <input
-                        type="text"
-                        className="inputBoxIn"
-                        value={desc}
-                        onChange={onDescHandler}
-                    ></input>
-                </div>
+                <form>
+                    <div>
+                        <label className="inputName"> 제목 </label>
 
+                        <input
+                            type="text"
+                            className="inputBoxIn"
+                            value={title}
+                            onChange={onTitleHandler}
+                        ></input>
+                        <label className="inputName"> 내용 </label>
+                        <input
+                            type="text"
+                            className="inputBoxIn"
+                            value={desc}
+                            onChange={onDescHandler}
+                        ></input>
+                    </div>
+                </form>
                 <button onClick={clickAddButtonHandler} className="addButton">
                     추가하기
                 </button>
             </div>
 
-            <div className="wd">Working..</div>
+            <div className="wd">Working.. 할 일을 추가해보세요!</div>
             <div className="backTodoList">
                 {list.map((item) => {
                     if (!item.isDone) {
                         return (
                             <div className="toDoList">
                                 <div>
-                                    <textarea
-                                        rows="3"
-                                        className="title"
-                                        type="text"
-                                        value={item.title}
-                                    >
-                                        {' '}
-                                    </textarea>
+                                    <label className="title">{item.title}</label>
                                     <div className="desc">{item.desc}</div>
                                     <div>
                                         <button
@@ -108,13 +105,13 @@ function App() {
                     }
                 })}
             </div>
-            <div className="wd">Done..</div>
+            <div className="wd">Done.. 미션 클리어!</div>
             <div className="backDoneList">
                 {list.map((item) => {
                     console.log(item);
                     if (item.isDone) {
                         return (
-                            <div key={item.id} className="toDoList">
+                            <div key={item.id} className="doneList">
                                 <div>
                                     <div className="title">{item.title}</div>
                                     <div className="desc">{item.desc}</div>
@@ -126,7 +123,7 @@ function App() {
                                             삭제하기
                                         </button>
                                         <button
-                                            className="doneButton"
+                                            className="cancelButton"
                                             onClick={() => doneButtonHandler(item.id)}
                                         >
                                             {list.isDone ? '완료' : '취소'}
